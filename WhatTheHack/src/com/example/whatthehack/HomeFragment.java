@@ -39,10 +39,10 @@ public class HomeFragment extends Fragment {
 	public HomeFragment() {
 	}
 
-	public int[] ids = { R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5,
-			R.id.btn6, R.id.btn7, R.id.btn8, R.id.btn9, R.id.btn10, R.id.btn11,
-			R.id.btn12, R.id.btn13, R.id.btn14, R.id.btn15, R.id.btn16,
-			R.id.btn17 };
+	public int[] ids = { R.id.btn3, R.id.btn2, R.id.btn6, R.id.btn4, R.id.btn10,
+			R.id.btn5, R.id.btn9, R.id.btn11, R.id.btn8, R.id.btn12, R.id.btn13,
+			R.id.btn14, R.id.btn16, R.id.btn15, R.id.btn5, R.id.btn15,
+			R.id.btn1 };
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,7 +58,7 @@ public class HomeFragment extends Fragment {
 				@Override
 				public void onClick(View arg0) {
 					// TODO Auto-generated method stub
-					pos = x;
+					pos = x + 1 ;
 					region = pos;
 					new GetLandmarks().execute();
 				}
@@ -91,7 +91,7 @@ public class HomeFragment extends Fragment {
 		//new GetLandmarks().execute();
 		AlertDialog.Builder builderSingle = new AlertDialog.Builder(
                 getActivity());
-		
+					
         builderSingle.setTitle("Region "+id +": ");
        
         
@@ -139,7 +139,7 @@ public class HomeFragment extends Fragment {
 	        pDialog = new ProgressDialog(getActivity());
 	        pDialog.setMessage("Loading Landmarks details. Please wait...");
 	        pDialog.setIndeterminate(false);
-	        pDialog.setCancelable(true);
+	        pDialog.setCancelable(false);
 	        pDialog.show();
 	    }
 	
