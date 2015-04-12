@@ -110,11 +110,16 @@ public class HomeFragment extends Fragment {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String strName = arrayAdapter.getItem(which);
+                        
                         AlertDialog.Builder builderInner = new AlertDialog.Builder(
                                getActivity());
-                        builderInner.setMessage(strName);
-                        builderInner.setTitle("Test");
+                       
+                        LayoutInflater inflater = getActivity().getLayoutInflater();
+                        View dialogView = inflater.inflate(R.layout.landmark, null);
+                        builderInner.setView(dialogView);
+                        
+                        builderInner.setMessage(" ");
+                        builderInner.setTitle(" ");
                         builderInner.setPositiveButton("Ok",
                                 new DialogInterface.OnClickListener() {
 
@@ -126,6 +131,9 @@ public class HomeFragment extends Fragment {
                                     }
                                 });
                         builderInner.show();
+                    	
+                    	
+                    	
                     }
                 });
         builderSingle.show();
